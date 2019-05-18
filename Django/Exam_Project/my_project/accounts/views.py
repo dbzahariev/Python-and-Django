@@ -16,6 +16,7 @@ class UserProfileDetails(generic.DetailView):
     context_object_name = 'user'
 
 
-class Signup(generic.CreateView):
+class Registration(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'register.html'
+    success_url = '/accounts/login/'
