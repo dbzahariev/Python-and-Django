@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bears</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        {% for bear in bears %}
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <!--              <img src="{{book.cover_image_url}}" class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h5 class="card-title">{{bear.brand}}</h5>
+                    <h5>{{bear.price}}</h5>
+                    <!--                <p class="card-text">{{book.description}}</p>-->
+                                    <a href="{% url 'bear-detail' bear.id %}" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 </body>
 </html>
