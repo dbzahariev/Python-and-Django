@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="container">
+    {% if bears %}
     <div class="row">
         {% for bear in bears %}
         <div class="col-lg-4">
@@ -17,12 +18,20 @@
                     <h5 class="card-title">{{bear.brand}}</h5>
                     <h5>{{bear.price}}</h5>
                     <!--                <p class="card-text">{{book.description}}</p>-->
-                                    <a href="{% url 'bear-detail' bear.id %}" class="btn btn-primary">See more</a>
+                    <a href="{% url 'bear-detail' bear.id %}" class="btn btn-primary">See more</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>You have Bears.</h1>
+            <h2>Go to magazine and bout bears NOW!</h2>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 </body>

@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="container">
+    {% if user.is_authenticated %}
     <div class="row">
         <div class="col-lg-6">
             <img src="{{bear.cover_image_url}}" style="width: 100%" alt="">
@@ -18,9 +19,10 @@
             <h2>Price: {{bear.price}}</h2>
             <h3>Owner: {{bear.owner}}</h3>
         </div>
-
-
     </div>
+    {% else %}
+    <h1>Please login to see detail for bear</h1>
+    {% endif %}
 </div>
 </body>
 </html>
